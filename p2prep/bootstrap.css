@@ -21,7 +21,13 @@ hr { box-sizing: content-box; height: 0; overflow: visible; }
 
 h1, h2, h3, h4, h5, h6 { margin-top: 1 rem; margin-bottom: 0.5rem; }
 
-p { margin-top: 1rem; margin-bottom: 1rem; }
+p { margin-top: 1rem; margin-bottom: 1rem;
+  width: 50%;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  margin-left: -5px;
+  z-index: 100;}
 
 abbr[title], abbr[data-original-title] { text-decoration: underline; text-decoration: underline dotted; cursor: help; border-bottom: 0; text-decoration-skip-ink: none; }
 
@@ -118,9 +124,9 @@ template { display: none; }
 
 [hidden] { display: none !important; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0.5rem; font-weight: 500; line-height: 5.2; }
 
-h1, .h1 { font-size: 2.5rem; }
+h1, .h1 { font-size: 4.5rem; }
 
 h2, .h2 { font-size: 2rem; }
 
