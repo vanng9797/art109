@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technical Exercise 8: Paper.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Load the Paper.js library -->
+    <script type="text/javascript" src="paper-full.min.js"></script>
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    <script type="text/paperscript" src="script.js" canvas="myCanvas"></script>
+  </head>
+  <body>
+    <h1>
+Van Nguyen
+</h1>
+  <h2>
+    Technical Exercise 8: Paper.js
+  </h2>
+<p>
+  For this assigment, I explore animation feature of Paper.js.
+  Basing on "Nyan Rainbow" example, I created a field of squared shapes animated across the canvas.
+  What I modified:<br>
+  - The speed of the shapes<br>
+  - direction of the shapes to move according to the angle the mouse to the center of canvas<br>
+  - Animation to change shapes' color<br>
+  - Adding rotation animation to the shapes<br>
+  - Adding opacity to the shapes<br>
+  <br>
+  Original Example: <a href="http://paperjs.org/examples/nyan-rainbow/">Nyan Rainbow </a>
+  </p>
+
+
+<div class="canvas">
+ <canvas id="myCanvas" crossorigin="anonymous" resize></canvas>
+</div>
+    </body>
+</html>
