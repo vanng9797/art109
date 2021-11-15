@@ -186,7 +186,7 @@ function init() {
 var mesh;
 //3D file Loader
 
-const loader = new GLTFLoader().load("./vannguyen-art109/p3/assets/city.glb",
+const loader = new GLTFLoader().load("./assets/city.glb",
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
     // gltf.scene.traverse(function(child) {  });
