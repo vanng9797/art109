@@ -1,10 +1,10 @@
 // Import required source code
 // Import three.js core
-import * as THREE from "./build/three.module.js";
+import * as THREE from "./vannguyen-art109/p3/build/three.module.js";
 // Import pointer lock controls
-import {  PointerLockControls } from "./src/PointerLockControls.js";
+import {  PointerLockControls } from "./vannguyen-art109/p3/src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
-import { GLTFLoader } from "./src/GLTFLoader.js";
+import { GLTFLoader } from "./vannguyen-art109/p3/src/GLTFLoader.js";
 // Establish variables
 let camera, scene, renderer, controls, material;
 
@@ -186,7 +186,7 @@ function init() {
 var mesh;
 //3D file Loader
 
-const loader = new GLTFLoader().load("vannguyen-art109/p3/assets/city.glb",
+const loader = new GLTFLoader().load("./vannguyen-art109/p3/assets/city.glb",
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
     // gltf.scene.traverse(function(child) {  });
