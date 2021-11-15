@@ -4,7 +4,7 @@ import * as THREE from "./build/three.module.js";
 // Import pointer lock controls
 import {  PointerLockControls } from "./src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
-// import { GLTFLoader } from "./src/GLTFLoader.js";
+import { GLTFLoader } from "./src/GLTFLoader.js";
 // Establish variables
 let camera, scene, renderer, controls, material;
 
@@ -183,28 +183,26 @@ function init() {
   scene.add(floor);
 
 // Variable for GLTF data
-// var mesh;
-// //3D file Loader
-//
-// const loader = new GLTFLoader().load(
-//   "./assets/city.glb",
-//   function(gltf) {
-//     // Scan loaded model for mesh and apply defined material if mesh is present
-//     // gltf.scene.traverse(function(child) {
-//     //   }
-//     // );
-//     // set position and scale
-//     mesh = gltf.scene;
-//     mesh.position.set(0, 0, 1);
-//     mesh.scale.set(1, 1, 1);
-//     // Add model to scene
-//     scene.add(mesh);
-//   },
-//   undefined,
-//   function(error) {
-//     console.error(error);
-//   }
-// );
+var mesh;
+//3D file Loader
+
+const loader = new GLTFLoader().load("../assets/city.glb",
+  function(gltf) {
+    // Scan loaded model for mesh and apply defined material if mesh is present
+    // gltf.scene.traverse(function(child) {  });
+
+    // Set position and scale
+    mesh = gltf.scene;
+    mesh.position.set(0, 0, 1);
+    mesh.scale.set(1, 1, 1);
+    // Add model to scene
+    scene.add(mesh);
+  },
+  undefined,
+  function(error) {
+    console.error(error);
+  }
+);
 
   // // First Image (red and purple glitch map)
   // // Load image as texture
