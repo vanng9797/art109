@@ -31,24 +31,24 @@ animate();
 function init() {
   // Establish the camera
   camera = new THREE.PerspectiveCamera(
-    75,
+    50,
     window.innerWidth / window.innerHeight,
     1,
-    1000
+    2000
   );
-  camera.position.y = 10;
+  camera.position.y = 50;
 
   // Define basic scene parameters
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.Fog(0xffffff, 0, 750);
+  scene.fog = new THREE.Fog(0xffffff, 10, 750);
 
 
 
 
   // Define scene lighting
   const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-  light.position.set(0.5, 1, 0.75);
+  light.position.set(1, 1, 0.75);
   scene.add(light);
 
   // Define controls
@@ -164,7 +164,7 @@ function init() {
   const colorsFloor = [];
 
   for (let i = 0, l = position.count; i < l; i++) {
-    color.setHSL(Math.random() * 0.5 + 0.5, 0.5, Math.random() * 0.2 + 0.7);
+    color.setHSL(Math.random() * 1 + 1, 1, Math.random() * 1 + 1);
     colorsFloor.push(color.r, color.g, color.b);
   }
 
@@ -194,7 +194,7 @@ const loader = new GLTFLoader().load("./assets/city.glb",
     // Set position and scale
     mesh = gltf.scene;
     mesh.position.set(0, 0, 1);
-    mesh.scale.set(1, 1, 1);
+    mesh.scale.set(3, 3, 3);
     // Add model to scene
     scene.add(mesh);
   },
@@ -204,19 +204,19 @@ const loader = new GLTFLoader().load("./assets/city.glb",
   }
 );
 
-  // // First Image (red and purple glitch map)
-  // // Load image as texture
-  // const texture = new THREE.TextureLoader().load( './assets/glitch_map.jpg' );
-  // // Immediately use the texture for material creation
-  // const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
-  // // Create plane geometry
-  // const geometry = new THREE.PlaneGeometry( 32, 16 );
-  // // Apply image texture to plane geometry
-  // const plane = new THREE.Mesh( geometry, material );
-  // // Position plane geometry
-  // plane.position.set(0 , 15 , -15);
-  // // Place plane geometry
-  // scene.add( plane );
+  // First Image (red and purple glitch map)
+  // Load image as texture
+  const texture = new THREE.TextureLoader().load( './assets/glitch_map.jpg' );
+  // Immediately use the texture for material creation
+  const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
+  // Create plane geometry
+  const geometry = new THREE.PlaneGeometry( 32, 16 );
+  // Apply image texture to plane geometry
+  const plane = new THREE.Mesh( geometry, material );
+  // Position plane geometry
+  plane.position.set(0 , 150 , -150);
+  // Place plane geometry
+  scene.add( plane );
   //
   // // Second Image (Text with image and white background)
   // // Load image as texture
@@ -302,4 +302,5 @@ function animate() {
   prevTime = time;
 
   renderer.render(scene, camera);
+
 }
