@@ -145,42 +145,42 @@ function init() {
   let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
   floorGeometry.rotateX(-Math.PI / 2);
 
-  // Vertex displacement pattern for ground
-  let position = floorGeometry.attributes.position;
-
-  for (let i = 0, l = position.count; i < l; i++) {
-    vertex.fromBufferAttribute(position, i);
-
-    vertex.x += Math.random() * 2 - 1;
-    vertex.y += Math.random() * 2;
-    vertex.z += Math.random() * 2 - 1;
-
-    position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  }
-
-  floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
-
-  position = floorGeometry.attributes.position;
-  const colorsFloor = [];
-
-  for (let i = 0, l = position.count; i < l; i++) {
-    color.setHSL(Math.random() * 1 + 1, 1, Math.random() * 1 + 1);
-    colorsFloor.push(color.r, color.g, color.b);
-  }
-
-  floorGeometry.setAttribute(
-    "color",
-    new THREE.Float32BufferAttribute(colorsFloor, 3)
-  );
-
-  const floorMaterial = new THREE.MeshBasicMaterial({
-    vertexColors: true
-  });
-
-  const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-
-  // Insert completed floor into the scene
-  scene.add(floor);
+  // // Vertex displacement pattern for ground
+  // let position = floorGeometry.attributes.position;
+  //
+  // for (let i = 0, l = position.count; i < l; i++) {
+  //   vertex.fromBufferAttribute(position, i);
+  //
+  //   vertex.x += Math.random() * 2 - 1;
+  //   vertex.y += Math.random() * 2;
+  //   vertex.z += Math.random() * 2 - 1;
+  //
+  //   position.setXYZ(i, vertex.x, vertex.y, vertex.z);
+  // }
+  //
+  // floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
+  //
+  // position = floorGeometry.attributes.position;
+  // const colorsFloor = [];
+  //
+  // for (let i = 0, l = position.count; i < l; i++) {
+  //   color.setHSL(Math.random() * 1 + 1, 1, Math.random() * 1 + 1);
+  //   colorsFloor.push(color.r, color.g, color.b);
+  // }
+  //
+  // floorGeometry.setAttribute(
+  //   "color",
+  //   new THREE.Float32BufferAttribute(colorsFloor, 3)
+  // );
+  //
+  // const floorMaterial = new THREE.MeshBasicMaterial({
+  //   vertexColors: true
+  // });
+  //
+  // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+  //
+  // // Insert completed floor into the scene
+  // scene.add(floor);
 
 // Variable for GLTF data
 var mesh;
@@ -210,11 +210,12 @@ const loader = new GLTFLoader().load("./assets/city.glb",
   // Immediately use the texture for material creation
   const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
   // Create plane geometry
-  const geometry = new THREE.PlaneGeometry( 32, 16 );
+  const geometry = new THREE.PlaneGeometry( 320, 160 );
   // Apply image texture to plane geometry
   const plane = new THREE.Mesh( geometry, material );
   // Position plane geometry
   plane.position.set(0 , 150 , -150);
+
   // Place plane geometry
   scene.add( plane );
   //
@@ -231,6 +232,11 @@ const loader = new GLTFLoader().load("./assets/city.glb",
   // plane2.position.set(0 , 100 , -200);
   // // Place plane geometry
   // scene.add( plane2 );
+
+
+
+
+
 
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({
