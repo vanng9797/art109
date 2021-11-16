@@ -6,10 +6,13 @@ import {  PointerLockControls } from "./src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
 import { GLTFLoader } from "./src/GLTFLoader.js";
 import { Sky } from './src/Sky.js';
-
+import { LightProbeGenerator } from './src/LightProbeGenerator.js';
 // Establish variables
 let camera, scene, renderer, controls, material;
 let sky, sun;
+
+let lightProbe;
+let directionalLight;
 
 const objects = [];
 let raycaster;
@@ -74,8 +77,6 @@ function init() {
   camera.position.y = 50;
 
 
-
-
   // Define basic scene parameters
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
@@ -85,12 +86,15 @@ function init() {
 
 
   // Define scene lighting
-  const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
+  const light = new THREE.HemisphereLight(0xeeeeff, 0x50505C, 1);
   light.position.set(0, 0, 0);
   scene.add(light);
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
+
+
+
 
   // Identify the html divs for the overlays
   const blocker = document.getElementById("blocker");
@@ -179,6 +183,15 @@ function init() {
     10
   );
 
+    			// probe
+  				lightProbe = new THREE.LightProbe();
+  				scene.add( lightProbe );
+
+  				// light
+  				directionalLight = new THREE.DirectionalLight( 0xffffff, API.directionalLightIntensity );
+  				directionalLight.position.set( 10, 10, 10 );
+  				scene.add( directionalLight );
+
   // Generate the ground
   // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
   // floorGeometry.rotateX(-Math.PI / 2);
@@ -253,9 +266,10 @@ const loader = new GLTFLoader().load("./assets/city.glb",
   const plane = new THREE.Mesh( geometry, material );
   // Position plane geometry
   plane.position.set(0 , 150 , -150);
-
   // Place plane geometry
   scene.add( plane );
+
+
   //
   // // Second Image (Text with image and white background)
   // // Load image as texture
