@@ -5,8 +5,11 @@ import * as THREE from "./build/three.module.js";
 import {  PointerLockControls } from "./src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
 import { GLTFLoader } from "./src/GLTFLoader.js";
+import { Sky } from './src/Sky.js';
+
 // Establish variables
 let camera, scene, renderer, controls, material;
+let sky, sun;
 
 const objects = [];
 let raycaster;
@@ -23,6 +26,43 @@ const direction = new THREE.Vector3();
 const vertex = new THREE.Vector3();
 const color = new THREE.Color();
 
+function initSky() {
+
+				// Add Sky
+
+        				const sky = new Sky();
+        				sky.scale.setScalar( 10000 );
+        				scene.add( sky );
+
+        				const skyUniforms = sky.material.uniforms;
+
+        				skyUniforms[ 'turbidity' ].value = 10;
+        				skyUniforms[ 'rayleigh' ].value = 2;
+        				skyUniforms[ 'mieCoefficient' ].value = 0.1;
+        				skyUniforms[ 'mieDirectionalG' ].value = 0.5;
+
+                				const parameters = {
+                					elevation: 50,
+                					azimuth: 180,
+                          exposure:0.5,
+                				};
+        /// GUI
+        //
+        // const effectController = {
+				// 	turbidity: 10,
+				// 	rayleigh: 3,
+				// 	mieCoefficient: 0.005,
+				// 	mieDirectionalG: 0.7,
+				// 	elevation: 2,
+				// 	azimuth: 180,
+				// 	exposure: renderer.toneMappingExposure
+				// };
+        //
+
+			}
+
+
+
 // Initialization and animation function calls
 init();
 animate();
@@ -30,13 +70,11 @@ animate();
 // Initialize the scene
 function init() {
   // Establish the camera
-  camera = new THREE.PerspectiveCamera(
-    50,
-    window.innerWidth / window.innerHeight,
-    1,
-    2000
-  );
+			camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 100, 2000000 );
   camera.position.y = 50;
+
+
+
 
   // Define basic scene parameters
   scene = new THREE.Scene();
@@ -48,7 +86,7 @@ function init() {
 
   // Define scene lighting
   const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-  light.position.set(1, 1, 0.75);
+  light.position.set(0, 0, 0);
   scene.add(light);
 
   // Define controls
@@ -142,8 +180,8 @@ function init() {
   );
 
   // Generate the ground
-  let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
-  floorGeometry.rotateX(-Math.PI / 2);
+  // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
+  // floorGeometry.rotateX(-Math.PI / 2);
 
   // // Vertex displacement pattern for ground
   // let position = floorGeometry.attributes.position;
@@ -246,6 +284,8 @@ const loader = new GLTFLoader().load("./assets/city.glb",
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
+
+	initSky();
   // Listen for window resizing
   window.addEventListener("resize", onWindowResize);
 }
