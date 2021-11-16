@@ -37,14 +37,14 @@ function initSky() {
         				const skyUniforms = sky.material.uniforms;
 
         				skyUniforms[ 'turbidity' ].value = 10;
-        				skyUniforms[ 'rayleigh' ].value = 2;
+        				skyUniforms[ 'rayleigh' ].value = 1;
         				skyUniforms[ 'mieCoefficient' ].value = 0.1;
-        				skyUniforms[ 'mieDirectionalG' ].value = 0.5;
+        				skyUniforms[ 'mieDirectionalG' ].value = 10;
 
                 				const parameters = {
-                					elevation: 50,
+                					elevation: 5,
                 					azimuth: 180,
-                          exposure:0.5,
+                          exposure:0.05,
                 				};
         /// GUI
         //
@@ -346,7 +346,7 @@ function animate() {
   }
 
   prevTime = time;
-
+renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.render(scene, camera);
 
 }
