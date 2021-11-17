@@ -2,14 +2,22 @@
 // Import three.js core
 import * as THREE from "./build/three.module.js";
 // Import pointer lock controls
-import {  PointerLockControls } from "./src/PointerLockControls.js";
+import {
+  PointerLockControls
+} from "./src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
-import { GLTFLoader } from "./src/GLTFLoader.js";
-import { Sky } from './src/Sky.js';
-// import { LightProbeGenerator } from './src/LightProbeGenerator.js';
+import {
+  GLTFLoader
+} from "./src/GLTFLoader.js";
+import {
+  Sky
+} from './src/Sky.js';
+
 // Establish variables
-let camera, scene, renderer, controls, material;
+let camera, scene, renderer, controls, material, material0, material1, material2;
 let sky, sun;
+
+let mesh, mesh0, mesh1, mesh2;
 
 let lightProbe;
 let directionalLight;
@@ -31,38 +39,38 @@ const color = new THREE.Color();
 
 function initSky() {
 
-				// Add Sky
+  // Add Sky
 
-        				const sky = new Sky();
-        				sky.scale.setScalar( 10000 );
-        				scene.add( sky );
+  const sky = new Sky();
+  sky.scale.setScalar(10000);
+  scene.add(sky);
 
-        				const skyUniforms = sky.material.uniforms;
+  const skyUniforms = sky.material.uniforms;
 
-        				skyUniforms[ 'turbidity' ].value = 10;
-        				skyUniforms[ 'rayleigh' ].value = 1;
-        				skyUniforms[ 'mieCoefficient' ].value = 0.1;
-        				skyUniforms[ 'mieDirectionalG' ].value = 10;
+  skyUniforms['turbidity'].value = 10;
+  skyUniforms['rayleigh'].value = 1;
+  skyUniforms['mieCoefficient'].value = 0.1;
+  skyUniforms['mieDirectionalG'].value = 10;
 
-                				const parameters = {
-                					elevation: 5,
-                					azimuth: 180,
-                          exposure:0.05,
-                				};
-        /// GUI
-        //
-        // const effectController = {
-				// 	turbidity: 10,
-				// 	rayleigh: 3,
-				// 	mieCoefficient: 0.005,
-				// 	mieDirectionalG: 0.7,
-				// 	elevation: 2,
-				// 	azimuth: 180,
-				// 	exposure: renderer.toneMappingExposure
-				// };
-        //
+  const parameters = {
+    elevation: 5,
+    azimuth: 180,
+    exposure: 0.05,
+  };
+  /// GUI
+  //
+  // const effectController = {
+  // 	turbidity: 10,
+  // 	rayleigh: 3,
+  // 	mieCoefficient: 0.005,
+  // 	mieDirectionalG: 0.7,
+  // 	elevation: 2,
+  // 	azimuth: 180,
+  // 	exposure: renderer.toneMappingExposure
+  // };
+  //
 
-			}
+}
 
 
 
@@ -73,22 +81,34 @@ animate();
 // Initialize the scene
 function init() {
   // Establish the camera
-			camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 100, 2000000 );
-  camera.position.y = 50;
-
-
+  camera = new THREE.PerspectiveCamera(57, window.innerWidth / window.innerHeight, 100, 20000);
+  camera.position.y = 500;
+  camera.position.x = -500;
+  camera.position.z = 0;
   // Define basic scene parameters
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.Fog(0xffffff, 10, 750);
+  // scene.background = new THREE.Color(0x00000);
+  scene.fog = new THREE.Fog(0xfdf2e9, 1, 1500);
 
 
 
 
   // Define scene lighting
-  const light = new THREE.HemisphereLight(0xeeeeff, 0x50505C, 1);
+  const light = new THREE.HemisphereLight(0xd4d4ff, 0x353561, 1);
   light.position.set(0, 0, 0);
   scene.add(light);
+
+  // Add a directional light to the scene
+  const directionalLight = new THREE.DirectionalLight(0xff988f, 1);
+  directionalLight.position.set(-5000, 5000, 0);
+  scene.add(directionalLight);
+  //
+  // Add an ambient light to the scene
+  const ambientLight = new THREE.AmbientLight(0xaed6f1, 0);
+  ambientLight.position.set(-500, -500, 0);
+  scene.add(ambientLight);
+
+
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
@@ -183,21 +203,14 @@ function init() {
     10
   );
 
-    			// // probe
-  				// lightProbe = new THREE.LightProbe();
-  				// scene.add( lightProbe );
-          //
-  				// // light
-  				// directionalLight = new THREE.DirectionalLight( 0xffffff, API.directionalLightIntensity );
-  				// directionalLight.position.set( 10, 10, 10 );
-  				// scene.add( directionalLight );
+
 
   // Generate the ground
-  // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
-  // floorGeometry.rotateX(-Math.PI / 2);
+  let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
+  floorGeometry.rotateX(-Math.PI / 2);
 
-  // // Vertex displacement pattern for ground
-  // let position = floorGeometry.attributes.position;
+  // Vertex displacement pattern for ground
+  let position = floorGeometry.attributes.position;
   //
   // for (let i = 0, l = position.count; i < l; i++) {
   //   vertex.fromBufferAttribute(position, i);
@@ -233,59 +246,134 @@ function init() {
   // // Insert completed floor into the scene
   // scene.add(floor);
 
-// Variable for GLTF data
-var mesh;
-//3D file Loader
 
-const loader = new GLTFLoader().load("./assets/city1.gltf",
-  function(gltf) {
-    // Scan loaded model for mesh and apply defined material if mesh is present
-    // gltf.scene.traverse(function(child) {  });
+  // Generate objects (cubes)
+  const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
 
-    // Set position and scale
-    mesh = gltf.scene;
-    mesh.position.set(0, 0, 1);
-    mesh.scale.set(3, 3, 3);
-    // Add model to scene
-    scene.add(mesh);
-  },
-  undefined,
-  function(error) {
-    console.error(error);
+  position = boxGeometry.attributes.position;
+  const colorsBox = [];
+
+  for (let i = 0, l = position.count; i < l; i++) {
+    color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
+    colorsBox.push(color.r, color.g, color.b);
   }
-);
+
+  boxGeometry.setAttribute(
+    "color",
+    new THREE.Float32BufferAttribute(colorsBox, 3)
+  );
+
+  for (let i = 0; i < 500; i++) {
+    const boxMaterial = new THREE.MeshPhongMaterial({
+      specular: 0xe8daef,
+      flatShading: true,
+      vertexColors: true
+    });
+    boxMaterial.color.setHSL(
+      Math.random() * 0.5 + 0.3,
+      0.75,
+      Math.random() * 0.7 + 0.5
+    );
+
+    const box = new THREE.Mesh(boxGeometry, boxMaterial);
+    box.position.x = Math.floor(Math.random() * 200 - 10) * 20 - 1000;
+    box.position.y = Math.floor(Math.random() * 200) * 20 - 1000;
+    box.position.z = Math.floor(Math.random() * 200 - 10) * 20 - 1500;
+
+    // Insert completed boxes into the scene
+    scene.add(box);
+    objects.push(box);
+  }
+
+
+
+
+
+  //3D file Loader
+
+  const loader = new GLTFLoader().load("./assets/city1.gltf",
+    function(gltf) {
+      // Scan loaded model for mesh and apply defined material if mesh is present
+      // gltf.scene.traverse(function(child) {  });
+
+      // Set position and scale
+      mesh = gltf.scene;
+      mesh.position.set(0, 0, 1);
+      mesh.scale.set(3, 3, 3);
+      // Add model to scene
+      scene.add(mesh);
+    },
+    undefined,
+    function(error) {
+      console.error(error);
+    }
+  );
+
+  //Floating Cubes
+
+  const geometry0 = new THREE.BoxGeometry(30, 30, 30);
+  const material0 = new THREE.MeshStandardMaterial({
+    roughness: 0,
+    opacity: 0.80,
+    transparent: true,
+  });
+
+  mesh0 = new THREE.Mesh(geometry0, material0);
+  mesh0.position.set(0, 0, 1);
+  mesh0.scale.set(3, 3, 3);
+  mesh0.material.color.set(0xf4d03f);
+  scene.add(mesh0);
+
+//
+
+  const geometry1 = new THREE.BoxGeometry(30, 30, 30);
+  const material1 = new THREE.MeshStandardMaterial({
+    roughness: 0,
+    opacity: 0.80,
+    transparent: true,
+  });
+
+  mesh1 = new THREE.Mesh(geometry1, material1);
+  mesh1.position.set(300, 100, 1);
+  mesh1.scale.set(3, 3, 3);
+  mesh1.material.color.set(0x3498db);
+  scene.add(mesh1);
+
+//
+
+  const geometry2 = new THREE.BoxGeometry(30, 30, 30);
+  const material2 = new THREE.MeshStandardMaterial({
+    roughness: 0,
+    opacity: 0.80,
+    transparent: true,
+  });
+
+  mesh2 = new THREE.Mesh(geometry2, material2);
+  mesh2.position.set(600, 250, 1);
+  mesh2.scale.set(3, 3, 3);
+  mesh2.material.color.set(0xe74c3c);
+  scene.add(mesh2);
+
 
   // First Image (red and purple glitch map)
-  // Load image as texture
-  const texture = new THREE.TextureLoader().load( './assets/glitch_map.jpg' );
+  // Load image as
+
+  const texture = new THREE.TextureLoader().load('./assets/welcome.png');
   // Immediately use the texture for material creation
-  const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
+  const material = new THREE.MeshBasicMaterial({
+    map: texture,
+    transparent: true,
+    side: THREE.DoubleSide
+  });
   // Create plane geometry
-  const geometry = new THREE.PlaneGeometry( 320, 160 );
+  const geometry = new THREE.PlaneGeometry(1080 * 1.2, 720 * 1.2);
   // Apply image texture to plane geometry
-  const plane = new THREE.Mesh( geometry, material );
+  const plane = new THREE.Mesh(geometry, material);
   // Position plane geometry
-  plane.position.set(0 , 150 , -150);
+  plane.position.set(1500, 1500, 0);
+  plane.rotation.setFromVector3(new THREE.Vector3(0, -Math.PI / 2, 0));
   // Place plane geometry
-  scene.add( plane );
-
-
-  //
-  // // Second Image (Text with image and white background)
-  // // Load image as texture
-  // const texture2 = new THREE.TextureLoader().load( './assets/bouy.jpg' );
-  // // immediately use the texture for material creation
-  // const material2 = new THREE.MeshBasicMaterial( { map: texture2, side: THREE.DoubleSide } );
-  // // Create plane geometry
-  // const geometry2 = new THREE.PlaneGeometry( 200, 100 );
-  // // Apply image texture to plane geometry
-  // const plane2 = new THREE.Mesh( geometry2, material2 );
-  // // Position plane geometry
-  // plane2.position.set(0 , 100 , -200);
-  // // Place plane geometry
-  // scene.add( plane2 );
-
-
+  scene.add(plane);
 
 
 
@@ -299,7 +387,7 @@ const loader = new GLTFLoader().load("./assets/city1.gltf",
   document.body.appendChild(renderer.domElement);
 
 
-	initSky();
+  initSky();
   // Listen for window resizing
   window.addEventListener("resize", onWindowResize);
 }
@@ -315,7 +403,7 @@ function onWindowResize() {
 // Animation function
 function animate() {
   requestAnimationFrame(animate);
-
+  render();
   const time = performance.now();
 
   // Check for controls being activated (locked) and animate scene according to controls
@@ -360,7 +448,28 @@ function animate() {
   }
 
   prevTime = time;
-renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.render(scene, camera);
 
+}
+
+
+function render() {
+
+  const time = performance.now() * 0.001;
+
+
+  mesh0.position.y = Math.sin(time) * 20;
+  mesh0.rotation.x = time * 0.45;
+  mesh0.rotation.z = time * 0.40;
+
+  mesh1.position.y = Math.sin(time) * 25 + 100;
+  mesh1.rotation.x = time * 0.5 + 250;
+  mesh1.rotation.z = time * 0.55;
+
+  mesh2.position.y = Math.sin(time) * 30 + 250;
+  mesh2.rotation.x = time * 0.55 + 500;
+  mesh2.rotation.z = time * 0.70;
+
+  renderer.render(scene, camera);
 }

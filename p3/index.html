@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Van Nguyen - Project 3</title>
     <link rel="stylesheet" href="./style.css" />
+    <!-- Load the Paper.js library -->
+    <script type="text/javascript" src="paper-full.min.js"></script>
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    <script type="text/paperscript" src="script.js" canvas="myCanvas"></script>
 
   </head>
   <body>
@@ -14,11 +18,18 @@
     <h1>
   <a href="./city.html">City of Abstraction</a>
     </h1>
-
+<p>“City of Abstraction” is a project of creating an imaginary abstract world using 3D model and Three.JS codes.
+  In this Abstract city, buildings are made of floating cube shapes emerging together into a city.
+  There are 3 primary cubes that is placed in the center, which represent its city's core power.
+  They create the gravity of this world, making the city floating on air.
+</p>
     <p class="mid">
       <a href="https://github.com/vanng9797/vannguyen-art109/tree/master/p3">This GitHub Repo</a>
     </p>
 
+    <div class="canvas">
+     <canvas id="myCanvas" crossorigin="anonymous" resize></canvas>
+    </div>
 
   </body>
 </html>

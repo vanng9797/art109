@@ -5,11 +5,13 @@ This is used because of the differences needed for the full screen style.*/
 
 html,
 body {
-  font-family: "Source Code Pro", monospace;
+  font-family: helvetica, arial, sans-serif, monospace;
   margin: auto;
+    position: relative;
 }
 
 h1 {
+
   font-style: bold;
   color: #2E9939;
   text-align: center;
@@ -18,12 +20,13 @@ h1 {
 }
 
 h2 {
-  color: #2E5999;
+  color: #ba84d9;
   text-align: center;
   padding-bottom: 20px;
 }
 
-p {
+p {  text-align: center;
+    color: #748eb5;
   width: 50%;
   font-weight: 500;
   padding: 0px;
@@ -37,6 +40,7 @@ p.move-mid {
   text-align: center;
   margin: auto;
   color: #6E2E99;
+  
 }
 
 a {
@@ -63,4 +67,10 @@ a {
   text-align: center;
   font-size: 18px;
   cursor: pointer;
+}
+
+canvas {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
 }
