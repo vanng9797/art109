@@ -303,18 +303,24 @@ const geometry2 = new THREE.BoxGeometry( 30, 30, 30 );
         mesh2.material.color.set( 0xe74c3c);
 				scene.add( mesh2 );
 
+//transparent image
+
+// makeInstance(geometry, 'white', Math.PI * 0.5, './assets/welcome.png');
+
+
   // First Image (red and purple glitch map)
-  // Load image as texture
+  // Load image as
+
   const texture = new THREE.TextureLoader().load( './assets/welcome.png' );
   // Immediately use the texture for material creation
-  const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
+  const material = new THREE.MeshBasicMaterial( { map: texture,  transparent: true, side: THREE.DoubleSide } );
   // Create plane geometry
-  const geometry = new THREE.PlaneGeometry( 1080, 720 );
+  const geometry = new THREE.PlaneGeometry( 1080*1.2, 720*1.2 );
   // Apply image texture to plane geometry
   const plane = new THREE.Mesh( geometry, material );
   // Position plane geometry
-  plane.position.set(1500 , 550 , 0);
-plane.rotation.setFromVector3(new THREE.Vector3( 0, Math.PI / 2, 0));
+  plane.position.set(1500 , 1500 , 0);
+plane.rotation.setFromVector3(new THREE.Vector3( 0, -Math.PI / 2, 0));
   // Place plane geometry
   scene.add( plane );
 
@@ -421,16 +427,16 @@ renderer.outputEncoding = THREE.sRGBEncoding;
 
 
         mesh0.position.y = Math.sin( time ) * 20 ;
-        mesh0.rotation.x = time * 0.5;
-        mesh0.rotation.z = time * 0.51;
+        mesh0.rotation.x = time * 0.45;
+        mesh0.rotation.z = time * 0.50;
 
-        mesh1.position.y = Math.sin( time ) * 20 + 100;
+        mesh1.position.y = Math.sin( time ) * 25 + 100;
         mesh1.rotation.x = time * 0.5+250;
-        mesh1.rotation.z = time * 0.51;
+        mesh1.rotation.z = time * 0.55;
 
-        mesh2.position.y = Math.sin( time ) * 20 + 250;
-        mesh2.rotation.x = time * 0.5+500;
-        mesh2.rotation.z = time * 0.51;
+        mesh2.position.y = Math.sin( time ) * 30 + 250;
+        mesh2.rotation.x = time * 0.55+500;
+        mesh2.rotation.z = time * 0.60;
 
 				renderer.render( scene, camera );
 			}
