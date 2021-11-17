@@ -305,7 +305,7 @@ const geometry2 = new THREE.BoxGeometry( 30, 30, 30 );
 
   // First Image (red and purple glitch map)
   // Load image as texture
-  const texture = new THREE.TextureLoader().load( './assets/welcome.jpg' );
+  const texture = new THREE.TextureLoader().load( './assets/welcome.png' );
   // Immediately use the texture for material creation
   const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
   // Create plane geometry
