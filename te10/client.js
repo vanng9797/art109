@@ -11,6 +11,8 @@ import { Sky } from './src/Sky.js';
 let camera, scene, renderer, controls, material, material0, material1, material2;
 let sky, sun;
 
+let mesh, mesh0, mesh1, mesh2;
+
 let lightProbe;
 let directionalLight;
 
@@ -89,6 +91,18 @@ function init() {
   const light = new THREE.HemisphereLight(0xeeeeff, 0x50505C, 1);
   light.position.set(0, 0, 0);
   scene.add(light);
+
+  // Add a directional light to the scene
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(-5000, 5000, 0);
+  scene.add(directionalLight);
+  //
+  // Add an ambient light to the scene
+  const ambientLight = new THREE.AmbientLight(0xaed6f1 ,0);
+    ambientLight.position.set(-500, -500, 0);
+  scene.add(ambientLight);
+
+
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
@@ -233,8 +247,6 @@ function init() {
   // // Insert completed floor into the scene
   // scene.add(floor);
 
-// Variable for GLTF data
-var mesh, mesh0, mesh1, mesh2;
 //3D file Loader
 
 const loader = new GLTFLoader().load("./assets/city1.gltf",
@@ -256,7 +268,10 @@ const loader = new GLTFLoader().load("./assets/city1.gltf",
 );
 
 const geometry0 = new THREE.BoxGeometry( 30, 30, 30 );
-				const material0 = new THREE.MeshStandardMaterial( { roughness: 0 } );
+				const material0 = new THREE.MeshStandardMaterial( {
+          roughness: 0,
+          opacity: 0.75,
+          transparent: true, } );
 
 				mesh0 = new THREE.Mesh( geometry0, material0 );
         mesh0.position.set(0, 0, 1);
@@ -265,21 +280,27 @@ const geometry0 = new THREE.BoxGeometry( 30, 30, 30 );
 				scene.add( mesh0 );
 
 const geometry1 = new THREE.BoxGeometry( 30, 30, 30 );
-				const material1 = new THREE.MeshStandardMaterial( { roughness: 0 } );
+				const material1 = new THREE.MeshStandardMaterial( {
+          roughness: 0,
+          opacity: 0.75,
+          transparent: true,  } );
 
 				mesh1 = new THREE.Mesh( geometry1, material1 );
-        mesh1.position.set(250, 100, 1);
+        mesh1.position.set(300, 100, 1);
         mesh1.scale.set(3, 3, 3);
         mesh1.material.color.set( 0x3498db   );
 				scene.add( mesh1 );
 
 const geometry2 = new THREE.BoxGeometry( 30, 30, 30 );
-				const material2 = new THREE.MeshStandardMaterial( { roughness: 0 } );
+				const material2 = new THREE.MeshStandardMaterial( {
+          roughness: 0,
+          opacity: 0.75,
+          transparent: true,  } );
 
 				mesh2 = new THREE.Mesh( geometry2, material2 );
-        mesh2.position.set(500, 250, 1);
+        mesh2.position.set(600, 250, 1);
         mesh2.scale.set(3, 3, 3);
-        mesh2.material.color.set( 0xF08080  );
+        mesh2.material.color.set( 0xe74c3c);
 				scene.add( mesh2 );
 
   // First Image (red and purple glitch map)
@@ -343,7 +364,7 @@ function onWindowResize() {
 // Animation function
 function animate() {
   requestAnimationFrame(animate);
-
+render();
   const time = performance.now();
 
   // Check for controls being activated (locked) and animate scene according to controls
@@ -398,12 +419,18 @@ renderer.outputEncoding = THREE.sRGBEncoding;
 
 				const time = performance.now() * 0.001;
 
-				mesh1.position.y = Math.sin( time ) * 20 + 5;
-				mesh1.rotation.x = time * 0.5;
-				mesh1.rotation.z = time * 0.51;
 
+        mesh0.position.y = Math.sin( time ) * 20 ;
+        mesh0.rotation.x = time * 0.5;
+        mesh0.rotation.z = time * 0.51;
 
+        mesh1.position.y = Math.sin( time ) * 20 + 100;
+        mesh1.rotation.x = time * 0.5+250;
+        mesh1.rotation.z = time * 0.51;
+
+        mesh2.position.y = Math.sin( time ) * 20 + 250;
+        mesh2.rotation.x = time * 0.5+500;
+        mesh2.rotation.z = time * 0.51;
 
 				renderer.render( scene, camera );
-
 			}
