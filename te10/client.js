@@ -156,7 +156,7 @@ function init() {
         break;
 
       case "Space":
-        if (canJump === true) velocity.y += 350;
+        if (canJump === true) velocity.y += 700;
         canJump = false;
         break;
     }
@@ -270,7 +270,7 @@ const loader = new GLTFLoader().load("./assets/city1.gltf",
 const geometry0 = new THREE.BoxGeometry( 30, 30, 30 );
 				const material0 = new THREE.MeshStandardMaterial( {
           roughness: 0,
-          opacity: 0.75,
+          opacity: 0.80,
           transparent: true, } );
 
 				mesh0 = new THREE.Mesh( geometry0, material0 );
@@ -282,7 +282,7 @@ const geometry0 = new THREE.BoxGeometry( 30, 30, 30 );
 const geometry1 = new THREE.BoxGeometry( 30, 30, 30 );
 				const material1 = new THREE.MeshStandardMaterial( {
           roughness: 0,
-          opacity: 0.75,
+          opacity: 0.80,
           transparent: true,  } );
 
 				mesh1 = new THREE.Mesh( geometry1, material1 );
@@ -294,7 +294,7 @@ const geometry1 = new THREE.BoxGeometry( 30, 30, 30 );
 const geometry2 = new THREE.BoxGeometry( 30, 30, 30 );
 				const material2 = new THREE.MeshStandardMaterial( {
           roughness: 0,
-          opacity: 0.75,
+          opacity: 0.80,
           transparent: true,  } );
 
 				mesh2 = new THREE.Mesh( geometry2, material2 );
