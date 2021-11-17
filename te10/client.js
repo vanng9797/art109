@@ -156,7 +156,7 @@ function init() {
         break;
 
       case "Space":
-        if (canJump === true) velocity.y += 700;
+        if (canJump === true) velocity.y += 350;
         canJump = false;
         break;
     }
