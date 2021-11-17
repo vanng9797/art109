@@ -6,7 +6,7 @@ import {  PointerLockControls } from "./src/PointerLockControls.js";
 // import { OrbitControls } from './src/OrbitControls.js';
 import { GLTFLoader } from "./src/GLTFLoader.js";
 import { Sky } from './src/Sky.js';
-import { LightProbeGenerator } from './src/LightProbeGenerator.js';
+// import { LightProbeGenerator } from './src/LightProbeGenerator.js';
 // Establish variables
 let camera, scene, renderer, controls, material;
 let sky, sun;
@@ -183,14 +183,14 @@ function init() {
     10
   );
 
-    			// probe
-  				lightProbe = new THREE.LightProbe();
-  				scene.add( lightProbe );
-
-  				// light
-  				directionalLight = new THREE.DirectionalLight( 0xffffff, API.directionalLightIntensity );
-  				directionalLight.position.set( 10, 10, 10 );
-  				scene.add( directionalLight );
+    			// // probe
+  				// lightProbe = new THREE.LightProbe();
+  				// scene.add( lightProbe );
+          //
+  				// // light
+  				// directionalLight = new THREE.DirectionalLight( 0xffffff, API.directionalLightIntensity );
+  				// directionalLight.position.set( 10, 10, 10 );
+  				// scene.add( directionalLight );
 
   // Generate the ground
   // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 200, 200);
@@ -237,7 +237,7 @@ function init() {
 var mesh;
 //3D file Loader
 
-const loader = new GLTFLoader().load("./assets/city.glb",
+const loader = new GLTFLoader().load("./assets/city1.gltf",
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
     // gltf.scene.traverse(function(child) {  });
