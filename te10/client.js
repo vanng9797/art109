@@ -57,18 +57,6 @@ function initSky() {
     azimuth: 180,
     exposure: 0.05,
   };
-  /// GUI
-  //
-  // const effectController = {
-  // 	turbidity: 10,
-  // 	rayleigh: 3,
-  // 	mieCoefficient: 0.005,
-  // 	mieDirectionalG: 0.7,
-  // 	elevation: 2,
-  // 	azimuth: 180,
-  // 	exposure: renderer.toneMappingExposure
-  // };
-  //
 
 }
 
@@ -82,7 +70,7 @@ animate();
 function init() {
   // Establish the camera
   camera = new THREE.PerspectiveCamera(57, window.innerWidth / window.innerHeight, 100, 20000);
-  camera.position.y = 500;
+  camera.position.y = 5000;
   camera.position.x = -500;
   camera.position.z = 0;
   // Define basic scene parameters
@@ -212,43 +200,11 @@ function init() {
   // Vertex displacement pattern for ground
   let position = floorGeometry.attributes.position;
   //
-  // for (let i = 0, l = position.count; i < l; i++) {
-  //   vertex.fromBufferAttribute(position, i);
-  //
-  //   vertex.x += Math.random() * 2 - 1;
-  //   vertex.y += Math.random() * 2;
-  //   vertex.z += Math.random() * 2 - 1;
-  //
-  //   position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  // }
-  //
-  // floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
-  //
-  // position = floorGeometry.attributes.position;
-  // const colorsFloor = [];
-  //
-  // for (let i = 0, l = position.count; i < l; i++) {
-  //   color.setHSL(Math.random() * 1 + 1, 1, Math.random() * 1 + 1);
-  //   colorsFloor.push(color.r, color.g, color.b);
-  // }
-  //
-  // floorGeometry.setAttribute(
-  //   "color",
-  //   new THREE.Float32BufferAttribute(colorsFloor, 3)
-  // );
-  //
-  // const floorMaterial = new THREE.MeshBasicMaterial({
-  //   vertexColors: true
-  // });
-  //
-  // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-  //
-  // // Insert completed floor into the scene
-  // scene.add(floor);
+
 
 
   // Generate objects (cubes)
-    const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
+    const boxGeometry = new THREE.BoxGeometry(15, 15, 15).toNonIndexed();
 
     position = boxGeometry.attributes.position;
     const colorsBox = [];
@@ -284,30 +240,6 @@ function init() {
       scene.add(box);
       objects.push(box);
     }
-
-
-
-
-  //3D file Loader
-
-  // const loader = new GLTFLoader().load("./assets/city1.gltf",
-  //   function(gltf) {
-  //     // Scan loaded model for mesh and apply defined material if mesh is present
-  //     // gltf.scene.traverse(function(child) {  });
-  //
-  //     // Set position and scale
-  //     mesh = gltf.scene;
-  //     mesh.position.set(0, 0, 1);
-  //     mesh.scale.set(3, 3, 3);
-  //     // Add model to scene
-  //     scene.add(mesh);
-  //   },
-  //   undefined,
-  //   function(error) {
-  //     console.error(error);
-  //   }
-  // );
-
 
 
 
@@ -376,26 +308,6 @@ function init() {
   plane.rotation.setFromVector3(new THREE.Vector3(0, -Math.PI / 2, 0));
   // Place plane geometry
   scene.add(plane);
-
-
-  //
-  // // Second Image (Text with image and white background)
-  // // Load image as texture
-  // const texture2 = new THREE.TextureLoader().load( './assets/bouy.jpg' );
-  // // immediately use the texture for material creation
-  // const material2 = new THREE.MeshBasicMaterial( { map: texture2, side: THREE.DoubleSide } );
-  // // Create plane geometry
-  // const geometry2 = new THREE.PlaneGeometry( 200, 100 );
-  // // Apply image texture to plane geometry
-  // const plane2 = new THREE.Mesh( geometry2, material2 );
-  // // Position plane geometry
-  // plane2.position.set(0 , 100 , -200);
-  // // Place plane geometry
-  // scene.add( plane2 );
-
-
-
-
 
 
   // Define Rendered and html document placement
@@ -490,6 +402,8 @@ function render() {
   mesh2.position.y = Math.sin(time) * 30 + 250;
   mesh2.rotation.x = time * 0.55 + 500;
   mesh2.rotation.z = time * 0.60;
+
+  // box.rotation.z = time * 0.60;
 
   renderer.render(scene, camera);
 }
