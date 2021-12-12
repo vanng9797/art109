@@ -1,0 +1,33 @@
+.container{
+      position: absolute;
+}
+.img1{
+    position: relative;
+    top: 20px;
+    left: 100px;
+    transform: rotate(10deg);
+}
+#anim1 {
+  width: 50%;
+  position: absolute;
+  top: 610px;
+  left: 150px;
+}
+
+#btstext {
+  width: 92%;
+  position: absolute;
+  top: 260px;
+  left: 15px;
+}
+
+#heart {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  width: 110%;
+}
+
+body{
+  background-color: #dbceb0;
+}

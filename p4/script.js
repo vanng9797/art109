@@ -93,4 +93,18 @@ var animation = lottie.loadAnimation({
   loop: true, // Optional
   autoplay: true, // Optional
   name: "Hello World", // Name for future reference. Optional.
-})
+});
+
+
+// Lottie Interactivity
+LottieInteractivity.create({
+  mode: 'scroll',
+  player: '#firstLottie',
+  actions: [
+    {
+      visibility: [0,1],
+      type: 'seek',
+      frames: [0, 100],
+    },
+  ],
+});
