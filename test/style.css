@@ -7,6 +7,13 @@
     left: 100px;
     transform: rotate(10deg);
 }
+
+#line{
+  top:-20%;
+    width: 100vw;
+      position: absolute;
+}
+
 #anim1 {
   width: 50%;
   position: absolute;

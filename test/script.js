@@ -8,6 +8,15 @@ var animation = lottie.loadAnimation({
 })
 
 var animation = lottie.loadAnimation({
+  container: document.getElementById('line'), // Required
+  path: 'anim/line.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "line", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
   container: document.getElementById('anim1'), // Required
   path: 'anim/anim1.json', // Required
   renderer: 'svg', // Required
