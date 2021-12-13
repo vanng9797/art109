@@ -1,11 +1,27 @@
 .container{
       position: absolute;
+      justify-content:center;
+flex-direction:column;
+  display:flex;
 }
+
+
+
 .img1{
+    float: left;
     position: relative;
     top: 20px;
     left: 100px;
     transform: rotate(10deg);
+}
+
+.img5{
+
+    position: relative;
+  	float: right;
+    top: 20px;
+    left: 100px;
+    transform: rotate(-10deg);
 }
 
 img{
@@ -13,8 +29,10 @@ img{
 }
 
 
+
+
 #line{
-  top:-20%;
+  top:-25%;
     width: 100%;
     height: 300%;
       position: absolute;
@@ -42,5 +60,9 @@ img{
 }
 
 body{
-  background-color: #dbceb0;
+  background-color: #fdf9de;
+  opacity: 1;
+  background-image:  linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #fdf9de 0.9px);
+  background-size: 45px 45px, 45px 45px, 9px 9px, 9px 9px;
+  background-position: -1.8px -1.8px, -1.8px -1.8px, -0.9px -0.9px, -0.9px -0.9px;
 }
