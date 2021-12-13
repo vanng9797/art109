@@ -1,3 +1,15 @@
+h1{
+  padding: 10%;
+  background-image: url(images/flower1.png);
+     background-repeat: no-repeat;
+        display:inline-block;
+           background-size: 15%;
+           background-position: center;
+           background-image: 15%;
+
+
+}
+
 .container {
 
   text-align: center;
@@ -9,7 +21,7 @@
 .img1 {
   float: left;
   position: relative;
-  top: 20px;
+  top: 100px;
   left: 100px;
   transform: rotate(10deg);
 }
@@ -17,19 +29,42 @@
 .img2 {
   float: left;
   position: relative;
-  top: 20px;
-  left: 100px;
+  top: 400px;
+  left: 200px;
   transform: rotate(10deg);
 }
 
 .img5 {
   position: relative;
   float: right;
-  top: 200px;
+  top: 100px;
   left: -120px;
   transform: rotate(-10deg);
 }
 
+.img7 {
+  position: relative;
+  float: right;
+  top: 150px;
+  left: -120px;
+  transform: rotate(0deg);
+}
+
+.img8 {
+  position: relative;
+  float: right;
+  top: 400px;
+  left: -100px;
+  transform: rotate(0deg);
+}
+
+.img9 {
+  position: relative;
+  float: left;
+  top: 0px;
+  left: 100px;
+  transform: rotate(-2deg);
+}
 
 .bg {
   position: absolute;
@@ -76,6 +111,7 @@
 }
 
 body {
+
   align-content: center;
   text-align: center;
   margin: 0px;
