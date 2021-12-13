@@ -1,41 +1,29 @@
-var animation = lottie.loadAnimation({
-  container: document.getElementById('anim'), // Required
-  path: 'leaves.json', // Required
-  renderer: 'svg', // Required
-  loop: true, // Optional
-  autoplay: true, // Optional
-  name: "leaves", // Name for future reference. Optional.
-})
 
-LottieInteractivity.create({
-  mode: 'scroll',
-  player: '#line1',
-  actions: [
-    {
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#line1',
+    actions: [{
       visibility: [0, 1],
       type: 'seek',
-      frames: [0, 100],
-    },
-  ],
-});
-
-// var animation = lottie.loadAnimation({
-//   container: document.getElementById('line1'), // Required
-//   path: 'anim/line1.json', // Required
-//   renderer: 'svg', // Required
-//   loop: true, // Optional
-//   autoplay: true, // Optional
-//   name: "line1", // Name for future reference. Optional.
-// })
-
-var animation = lottie.loadAnimation({
-  container: document.getElementById('line2'), // Required
-  path: 'anim/line2.json', // Required
-  renderer: 'svg', // Required
-  loop: true, // Optional
-  autoplay: true, // Optional
-  name: "line2", // Name for future reference. Optional.
+      frames: [0, 130],
+    }, ],
+  });
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#line2',
+    actions: [{
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 130],
+    }, ],
+  });
+})
+
+
 
 var animation = lottie.loadAnimation({
   container: document.getElementById('anim1'), // Required
@@ -62,4 +50,13 @@ var animation = lottie.loadAnimation({
   loop: true, // Optional
   autoplay: true, // Optional
   name: "heart", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('hansheart'), // Required
+  path: 'anim/hansheart.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "hansheart", // Name for future reference. Optional.
 })

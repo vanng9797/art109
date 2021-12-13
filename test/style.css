@@ -1,50 +1,56 @@
-.container{
-      position: absolute;
-      justify-content:center;
-flex-direction:column;
-  display:flex;
+.container {
+
+  text-align: center;
+	justify-content:center;
+	flex-direction:column;
+  /* display:flex; */
+}
+
+.img1 {
+  float: left;
+  position: relative;
+  top: 20px;
+  left: 100px;
+  transform: rotate(10deg);
+}
+
+.img2 {
+  float: left;
+  position: relative;
+  top: 20px;
+  left: 100px;
+  transform: rotate(10deg);
+}
+
+.img5 {
+  position: relative;
+  float: right;
+  top: 200px;
+  left: -120px;
+  transform: rotate(-10deg);
 }
 
 
-
-.img1{
-    float: left;
-    position: relative;
-    top: 20px;
-    left: 100px;
-    transform: rotate(10deg);
+.bg {
+  position: absolute;
 }
 
-.img5{
-
-    position: relative;
-  	float: right;
-    top: 20px;
-    left: 100px;
-    transform: rotate(-10deg);
+#line1, #line2 {
+  top: -25%;
+  width: 100%;
+  height: 300%;
+  position: relative;
 }
 
-img{
-      position: relative;
-}
-
-
-#line1, #line2{
-  top:-25%;
-    width: 100%;
-    height: 300%;
-      position: relative;
-}
-
-#line2{
-  top:75%;
+#line2 {
+  top: 75%;
 }
 
 #anim1 {
-  width: 50%;
+  width: 120%;
   position: absolute;
-  top: 610px;
-  left: 150px;
+  top: 10px;
+  left: 0px;
 }
 
 #btstext {
@@ -56,16 +62,28 @@ img{
 
 #heart {
   position: absolute;
-  top: 70px;
-  left: 70px;
+  top: 50px;
+  left: -10px;
   width: 110%;
 }
 
-body{
+#hansheart {
+  position: absolute;
+  top: 130px;
+  left: 200px;
+  width: 35%;
+  transform: rotate(-10deg);
+}
 
-  background-color: #fdf9de;
+body {
+  align-content: center;
+  text-align: center;
+  margin: 0px;
+	display: flex;
+	flex-direction: column;
+  /* background-color: #fdf9de; */
   opacity: 1;
-  background-image:  linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #fdf9de 0.9px);
+  background-image: linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #F5F5DC 0.9px);
   background-size: 45px 45px, 45px 45px, 9px 9px, 9px 9px;
   background-position: -1.8px -1.8px, -1.8px -1.8px, -0.9px -0.9px, -0.9px -0.9px;
 }
