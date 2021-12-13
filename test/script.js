@@ -7,14 +7,26 @@ var animation = lottie.loadAnimation({
   name: "leaves", // Name for future reference. Optional.
 })
 
-var animation = lottie.loadAnimation({
-  container: document.getElementById('line1'), // Required
-  path: 'anim/line1.json', // Required
-  renderer: 'svg', // Required
-  loop: true, // Optional
-  autoplay: true, // Optional
-  name: "line1", // Name for future reference. Optional.
-})
+LottieInteractivity.create({
+  mode: 'scroll',
+  player: '#line1',
+  actions: [
+    {
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 100],
+    },
+  ],
+});
+
+// var animation = lottie.loadAnimation({
+//   container: document.getElementById('line1'), // Required
+//   path: 'anim/line1.json', // Required
+//   renderer: 'svg', // Required
+//   loop: true, // Optional
+//   autoplay: true, // Optional
+//   name: "line1", // Name for future reference. Optional.
+// })
 
 var animation = lottie.loadAnimation({
   container: document.getElementById('line2'), // Required

@@ -29,14 +29,16 @@ img{
 }
 
 
-#line1 #line2{
+#line1, #line2{
   top:-25%;
     width: 100%;
     height: 300%;
-      position: absolute;
+      position: relative;
 }
 
-
+#line2{
+  top:75%;
+}
 
 #anim1 {
   width: 50%;
@@ -60,6 +62,7 @@ img{
 }
 
 body{
+
   background-color: #fdf9de;
   opacity: 1;
   background-image:  linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #fdf9de 0.9px);
