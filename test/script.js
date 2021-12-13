@@ -8,12 +8,21 @@ var animation = lottie.loadAnimation({
 })
 
 var animation = lottie.loadAnimation({
-  container: document.getElementById('line'), // Required
-  path: 'anim/line.json', // Required
+  container: document.getElementById('line1'), // Required
+  path: 'anim/line1.json', // Required
   renderer: 'svg', // Required
   loop: true, // Optional
   autoplay: true, // Optional
-  name: "line", // Name for future reference. Optional.
+  name: "line1", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('line2'), // Required
+  path: 'anim/line2.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "line2", // Name for future reference. Optional.
 })
 
 var animation = lottie.loadAnimation({

@@ -29,14 +29,14 @@ img{
 }
 
 
-
-
-#line{
+#line1 #line2{
   top:-25%;
     width: 100%;
     height: 300%;
       position: absolute;
 }
+
+
 
 #anim1 {
   width: 50%;
