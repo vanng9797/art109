@@ -4,31 +4,45 @@
     <meta charset="utf-8">
     <title>Test</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    </head>
   <body>
-<h1>Van Nguyen's ART109 Final Project</h1>
+    <!-- Lines BG -->
+    <div class="bg">
+    <lottie-player
+      id="line1"
+      src="anim/line1.json"
+      style="width:100vw; height: auto; ">
+    </lottie-player>
 
-<div class="bg">
-<lottie-player
-  id="line1"
-  src="anim/line1.json"
-  style="width:100vw; height: auto; ">
-</lottie-player>
+
+    <!-- <div id="line1">
+    </div> -->
+    <!-- <div id="line2">
+    </div> -->
+
+    <lottie-player
+      id="line2"
+      src="anim/line2.json"
+      style="width:100vw; height: auto;">
+    </lottie-player>
+
+    </div>
+
+<img id= "ripped" src="images/ripped.png" width="600px">
+<h1>Throwback Memories</h1>
+<img id= "flower1" src="images/flower1.png" width="300px">
+<h2>  An interactive website that emulates a handmade scrapbook.
+  <br>The illustrations in the website will be created with motion in After Effect and exported into code.
+  <br>I will embed them into the website, and as viewers scroll, the motion of the illustrations will play, and they can also interact with the mouse cursor as it moves around the canvas.
+</h2>
+<img id= "piece" src="images/piece.png" width="300px">
+<img id= "flower2" src="images/flower2.png" width="300px">
 
 
-<!-- <div id="line1">
-</div> -->
-<!-- <div id="line2">
-</div> -->
-
-<lottie-player
-  id="line2"
-  src="anim/line2.json"
-  style="width:100vw; height: auto;">
-</lottie-player>
-
-</div>
-
+<!-- container -->
 <div class="container">
 <!-- BTS concert -->
      <a href="concert.html">
@@ -41,15 +55,43 @@
     </div>
   </a>
 
+
+  <!-- Universal Park -->
+     <a href="Universal.html">
+       <div class="img2">
+         <img src="images/2.png" alt="img2" width="350px">
+         <div id="hansheart">
+         </div>
+       </div>
+     </a>
+
+     <div class="img3">
+       <img src="images/3.png" alt="img3" width="350px">
+     </div>
+
+     <div class="img4">
+       <img src="images/4.png" alt="img4" width="350px">
+     </div>
+
+
+
+
+<!-- mang -->
+     <a href="images/5.png">
   <div class="img5">
     <img src="images/5.png" alt="img5" width="350px">
     <div id="anim1" >
     </div>
   </div>
+  </a>
 
+
+ <a href="images/6.png">
   <div class="img6">
     <img src="images/6.png" alt="img6" width="350px">
   </div>
+</a>
+
 
   <div class="img7">
     <img src="images/7.png" alt="img7" width="350px">
@@ -59,22 +101,6 @@
     <img src="images/8.png" alt="img8" width="350px">
   </div>
 
-<!-- Universal Park -->
-   <a href="Universal.html">
-     <div class="img2">
-       <img src="images/2.png" alt="img2" width="350px">
-       <div id="hansheart">
-       </div>
-     </div>
-   </a>
-
-     <div class="img3">
-       <img src="images/3.png" alt="img3" width="350px">
-     </div>
-
-     <div class="img4">
-       <img src="images/4.png" alt="img4" width="350px">
-     </div>
 
 
      <div class="img9">
@@ -94,4 +120,8 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
+<footer>
+  <h3>
+  © 2021 Van Nguyen </h3>
+</footer>
 </html>

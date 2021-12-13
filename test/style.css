@@ -1,69 +1,247 @@
-h1{
-  padding: 10%;
-  background-image: url(images/flower1.png);
-     background-repeat: no-repeat;
-        display:inline-block;
-           background-size: 15%;
-           background-position: center;
-           background-image: 15%;
-
-
+body {
+  font-family: 'Nanum Pen Script', cursive;
+    position: relative;
+  align-content: center;
+  text-align: center;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #fdf9de; */
+  opacity: 1;
+  background-image: linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #F5F5DC 0.9px);
+  background-size: 45px 45px, 45px 45px, 9px 9px, 9px 9px;
+  background-position: -1.8px -1.8px, -1.8px -1.8px, -0.9px -0.9px, -0.9px -0.9px;
 }
 
-.container {
+h1 {
+  font-family: 'Homemade Apple', cursive;
+    color: Sienna ;
+  position: relative;
+    font-size: 3rem;
+  font-weight: bold;
+  padding: 10%;
+  background-image: url(images/pinktape.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: 50%;
+  background-position: center;
+}
 
-  text-align: center;
-	justify-content:center;
-	flex-direction:column;
-  /* display:flex; */
+#ripped {
+  position: absolute;
+  left: 20%;
+  top:2%;
+  width: 50vw;
+  transform: rotate(170deg);
+}
+#flower1 {
+    position: absolute;
+    left: 65%;
+    width: 15vw;
+    top:50px;
+      transform: rotate(17deg);
+}
+#flower2 {
+    position: relative;
+    top:-150px;
+    left: 15%;
+    width: 15vw;
+}
+
+#piece {
+  	opacity: 50%;
+    position: relative;
+    left: 0%;
+    width: 20vw;
+    transform: rotate(45deg);
+}
+
+h2 {
+  color: RosyBrown;
+    position: relative;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      margin:0% 25%;
+}
+
+img {
+  float: left;
+  position: relative;
+  display: flex;
+
 }
 
 .img1 {
   float: left;
   position: relative;
-  top: 100px;
-  left: 100px;
-  transform: rotate(10deg);
+  top: ;
+  left: ;
+  transform: rotate(0deg);
 }
 
 .img2 {
   float: left;
   position: relative;
-  top: 400px;
-  left: 200px;
-  transform: rotate(10deg);
+  top: ;
+  left: ;
+  transform: rotate(-5deg);
+}
+
+.img3 {
+  float: left;
+  position: relative;
+  top: ;
+  left: ;
+  transform: rotate(9deg);
+}
+
+.img4 {
+  float: left;
+  position: relative;
+  top: ;
+  left: ;
+  transform: rotate(5deg);
 }
 
 .img5 {
   position: relative;
-  float: right;
-  top: 100px;
-  left: -120px;
+  float: left;
+  top: ;
+  left: -;
   transform: rotate(-10deg);
+}
+
+.img6 {
+  position: relative;
+  float: left;
+  top: ;
+  left: ;
+  transform: rotate(9deg);
 }
 
 .img7 {
   position: relative;
-  float: right;
-  top: 150px;
-  left: -120px;
-  transform: rotate(0deg);
+  float: left;
+  top: ;
+  left: ;
+  transform: rotate(5deg);
 }
 
 .img8 {
   position: relative;
-  float: right;
-  top: 400px;
-  left: -100px;
-  transform: rotate(0deg);
+  float: left;
+  top: ;
+  left: -;
+  transform: rotate(-5deg);
 }
 
 .img9 {
   position: relative;
   float: left;
-  top: 0px;
-  left: 100px;
+  top: ;
+  left: ;
   transform: rotate(-2deg);
+}
+
+.img10 {
+  position: relative;
+  float: left;
+  top: ;
+  left: ;
+  transform: rotate(-2deg);
+}
+
+.img1:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img2:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img3:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-5deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img4:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img5:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(5deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img6:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-5deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img7:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img8:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img9:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(-9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.img10:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+  transform: rotate(9deg);
+  transition: .2s all;
+	opacity: 90%;
+	filter:brightness(5px);
+}
+
+.bg {
+  position: relative;
+}
+
+.container {
+  margin: 5% 12% 100% 12%; /*top, right, bottom, left*/
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  /* display:flex; */
 }
 
 .bg {
@@ -78,7 +256,7 @@ h1{
 }
 
 #line2 {
-  top: 75%;
+margin-top: -5%;
 }
 
 #anim1 {
@@ -110,16 +288,6 @@ h1{
   transform: rotate(-10deg);
 }
 
-body {
-
-  align-content: center;
-  text-align: center;
-  margin: 0px;
-	display: flex;
-	flex-direction: column;
-  /* background-color: #fdf9de; */
-  opacity: 1;
-  background-image: linear-gradient(#d7c7fc 1.5px, transparent 1.5px), linear-gradient(90deg, #d7c7fc 1.5px, transparent 1.5px), linear-gradient(#d7c7fc 0.9px, transparent 0.9px), linear-gradient(90deg, #d7c7fc 0.9px, #F5F5DC 0.9px);
-  background-size: 45px 45px, 45px 45px, 9px 9px, 9px 9px;
-  background-position: -1.8px -1.8px, -1.8px -1.8px, -0.9px -0.9px, -0.9px -0.9px;
+footer{
+  padding: 0% 30%;
 }
