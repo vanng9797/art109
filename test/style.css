@@ -71,8 +71,8 @@ h1 {
 
 #flower3 {
     position: absolute;
-    top:50px;
-    left: 100%;
+    top:100px;
+    left: 110%;
     width: 10vw;
     transform: rotate(200deg);
 }
