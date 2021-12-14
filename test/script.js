@@ -23,6 +23,55 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#line3',
+    actions: [{
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 130],
+    }, ],
+  });
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'cursor',
+    player: '#star' ,
+    actions: [
+       {
+         position: { x: [0, 1], y: [-1, 2] },
+         type: 'seek',
+         frames: [0, 179],
+       },
+       {
+         position: { x: -1, y: -1 },
+         type: 'stop',
+         frames: [0],
+       },
+     ],
+  });
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'cursor',
+    player: '#star0' ,
+    actions: [
+       {
+         position: { x: [0, 1], y: [-1, 2] },
+         type: 'seek',
+         frames: [0, 179],
+       },
+       {
+         position: { x: -1, y: -1 },
+         type: 'stop',
+         frames: [0],
+       },
+     ],
+  });
+})
 
 
 var animation = lottie.loadAnimation({
@@ -59,4 +108,40 @@ var animation = lottie.loadAnimation({
   loop: true, // Optional
   autoplay: true, // Optional
   name: "hansheart", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('circle'), // Required
+  path: 'anim/circle.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "circle", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('cloud'), // Required
+  path: 'anim/cloud.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "cloud", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('btslogo'), // Required
+  path: 'anim/btslogo.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "btslogo", // Name for future reference. Optional.
+})
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('sun'), // Required
+  path: 'anim/sun.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "sun", // Name for future reference. Optional.
 })

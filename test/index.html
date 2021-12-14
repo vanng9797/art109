@@ -9,6 +9,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     </head>
   <body>
+        <img id="blob" src="images/blob.png">
     <!-- Lines BG -->
     <div class="bg">
     <lottie-player
@@ -18,10 +19,6 @@
     </lottie-player>
 
 
-    <!-- <div id="line1">
-    </div> -->
-    <!-- <div id="line2">
-    </div> -->
 
     <lottie-player
       id="line2"
@@ -29,17 +26,47 @@
       style="width:100vw; height: auto;">
     </lottie-player>
 
+    <lottie-player
+      id="line3"
+      src="anim/line1.json"
+      style="width:100vw; height: auto; ">
+    </lottie-player>
+
     </div>
+
+
 
 <img id= "ripped" src="images/ripped.png" width="600px">
 <h1>Throwback Memories</h1>
 <img id= "flower1" src="images/flower1.png" width="300px">
-<h2>  An interactive website that emulates a handmade scrapbook.
-  <br>The illustrations in the website will be created with motion in After Effect and exported into code.
-  <br>I will embed them into the website, and as viewers scroll, the motion of the illustrations will play, and they can also interact with the mouse cursor as it moves around the canvas.
-</h2>
-<img id= "piece" src="images/piece.png" width="300px">
+
+<h2>
+   "Throwback Memories" by Van Nguyen is an interactive website project that emulates a handmade scrapbook.
+  <br> It is about a trip to LA that   All animated illustrations are created in After Effect and exported into .JSON files.
+  <br> Viewers can also interact with the website by scrolling or using mouse cursor.
+<br>
+<br>
+<br>
+Location: Los Angeles, CA
+<br>Date: December 2021
+<br>
+<br>
+<br>For my favorite people,
+<br>Van Nguyen
+
+
+
 <img id= "flower2" src="images/flower2.png" width="300px">
+<img id= "flower3" src="images/flower3.png" width="300px">
+<lottie-player
+  id="star0"
+  src="anim/star.json"
+  style="width:15vw; height: auto; ">
+</lottie-player>
+
+</h2>
+
+
 
 
 <!-- container -->
@@ -65,14 +92,22 @@
        </div>
      </a>
 
+
+     <a href="images/3.png">
      <div class="img3">
        <img src="images/3.png" alt="img3" width="350px">
+       <div id="circle">
+       </div>
      </div>
+  </a>
 
+     <a href="images/4.png">
      <div class="img4">
        <img src="images/4.png" alt="img4" width="350px">
+       <div id="cloud">
+       </div>
      </div>
-
+  </a>
 
 
 
@@ -85,34 +120,47 @@
   </div>
   </a>
 
-
+     <a href="images/6.png">
  <a href="images/6.png">
   <div class="img6">
     <img src="images/6.png" alt="img6" width="350px">
+    <div id="btslogo" >
+    </div>
   </div>
 </a>
 
-
+     <a href="images/7.png">
   <div class="img7">
     <img src="images/7.png" alt="img7" width="350px">
+    <div id="sun" >
+    </div>
   </div>
+</a>
 
+     <a href="images/8.png">
   <div class="img8">
     <img src="images/8.png" alt="img8" width="350px">
   </div>
+</a>
 
-
-
+     <a href="images/9.png">
      <div class="img9">
        <img src="images/9.png" alt="img4" width="350px">
      </div>
+</a>
 
+     <a href="images/10.png">
      <div class="img10">
        <img src="images/10.png" alt="img4" width="350px">
      </div>
+</a>
 
- </div
-<div id="anim"></div>
+ </div>
+ <lottie-player
+   id="star"
+   src="anim/star.json"
+   style="width:30vw;">
+ </lottie-player>
 
   <!-- scripts -->
   <script type="text/javascript" src="lottie.js" ></script>
@@ -121,7 +169,6 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 <footer>
-  <h3>
-  © 2021 Van Nguyen </h3>
+ © 2021 Van Nguyen
 </footer>
 </html>
