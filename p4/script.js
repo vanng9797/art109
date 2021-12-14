@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   LottieInteractivity.create({
     mode: 'cursor',
@@ -70,6 +73,26 @@ document.addEventListener('DOMContentLoaded', function() {
   LottieInteractivity.create({
     mode: 'cursor',
     player: '#star0' ,
+    actions: [
+       {
+         position: { x: [0, 1], y: [-1, 2] },
+         type: 'seek',
+         frames: [0, 179],
+       },
+       {
+         position: { x: -1, y: -1 },
+         type: 'stop',
+         frames: [0],
+       },
+     ],
+  });
+})
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
+    mode: 'cursor',
+    player: '#star00' ,
     actions: [
        {
          position: { x: [0, 1], y: [-1, 2] },
