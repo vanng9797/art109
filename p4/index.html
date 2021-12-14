@@ -2,23 +2,174 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>ANIM LINE Test</title>
+    <title>Test</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    </head>
   <body>
-    <h1> LINE TEST
-    </h1>
-
+        <img id="blob" src="images/blob.png">
+    <!-- Lines BG -->
+    <div class="bg">
     <lottie-player
       id="line1"
-      src="line1.json"
+      src="anim/line1.json"
+      style="width:100vw; height: auto; ">
+    </lottie-player>
+
+
+
+    <lottie-player
+      id="line2"
+      src="anim/line2.json"
       style="width:100vw; height: auto;">
     </lottie-player>
 
-    <!-- scripts -->
-    <script type="text/javascript" src="lottie.js" ></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </body>
+    <lottie-player
+      id="line3"
+      src="anim/line1.json"
+      style="width:100vw; height: auto; ">
+    </lottie-player>
+
+    </div>
+
+
+
+<img id= "ripped" src="images/ripped.png" width="600px">
+<h1>Throwback Memories</h1>
+<img id= "flower1" src="images/flower1.png" width="300px">
+
+<h2>
+"Throwback Memories" by Van Nguyen is an interactive website project that emulates a handmade scrapbook, with the theme of "Storytelling".
+It is about her recent trip to LA at the end of 2021. With polaroid images, digital photos as well as videos, Van wishes to keep these happy memories forever on a web page, just like how she do on her scrapbook, but in a more engaging way.
+Here, she explores how to collaborate illustrations, animations, sounds and codes together.
+This website is made with HTML, CSS, and JS libraries which are JQuery and Lottie.
+All animated illustrations are created in After Effect and exported into .JSON files, and finally added in javascript.
+Viewers can also interact with the website by scrolling or hovering.
+<br>
+<br>
+<br>
+<br>"To my favorite people ♡,
+<br>From Van Nguyen."
+
+
+<img id= "blob1" src="images/blob1.png" width="600px">
+<img id= "flower2" src="images/flower2.png" width="300px">
+<img id= "flower3" src="images/flower3.png" width="300px">
+<lottie-player
+  id="star0"
+  src="anim/star.json"
+  style="width:15vw; height: auto; ">
+</lottie-player>
+
+</h2>
+
+
+
+
+<!-- container -->
+<div class="container">
+<!-- BTS concert -->
+     <a href="concert.html">
+    <div class="img1">
+       <img src="images/1.png" alt="img1" width="350px">
+       <div id="heart" >
+       </div>
+       <div id="btstext">
+       </div>
+    </div>
+  </a>
+
+
+  <!-- Universal Park -->
+     <a href="images/2.png">
+       <div class="img2">
+         <img src="images/2.png" alt="img2" width="350px">
+         <div id="hansheart">
+         </div>
+       </div>
+     </a>
+
+
+     <a href="images/3.png">
+     <div class="img3">
+       <img src="images/3.png" alt="img3" width="350px">
+       <div id="circle">
+       </div>
+     </div>
+  </a>
+
+     <a href="universal.html">
+     <div class="img4">
+       <img src="images/4.png" alt="img4" width="350px">
+       <div id="cloud">
+       </div>
+     </div>
+  </a>
+
+
+
+<!-- mang -->
+     <a href="images/5.png">
+  <div class="img5">
+    <img src="images/5.png" alt="img5" width="350px">
+    <div id="anim1" >
+    </div>
+  </div>
+  </a>
+
+     <a href="images/6.png">
+ <a href="images/6.png">
+  <div class="img6">
+    <img src="images/6.png" alt="img6" width="350px">
+    <div id="btslogo" >
+    </div>
+  </div>
+</a>
+
+     <a href="images/7.png">
+  <div class="img7">
+    <img src="images/7.png" alt="img7" width="350px">
+    <div id="sun" >
+    </div>
+  </div>
+</a>
+
+     <a href="images/8.png">
+  <div class="img8">
+    <img src="images/8.png" alt="img8" width="350px">
+  </div>
+</a>
+
+     <a href="images/9.png">
+     <div class="img9">
+       <img src="images/9.png" alt="img4" width="350px">
+     </div>
+</a>
+
+     <a href="images/10.png">
+     <div class="img10">
+       <img src="images/10.png" alt="img4" width="350px">
+     </div>
+</a>
+
+ </div>
+ <lottie-player
+   id="star"
+   src="anim/star.json"
+   style="width:25vw;">
+ </lottie-player>
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="sound.js"></script>
+  <script type="text/javascript" src="lottie.js" ></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+<footer>
+ © 2021 Van Nguyen
+</footer>
 </html>
