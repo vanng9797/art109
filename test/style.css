@@ -40,7 +40,8 @@ h1 {
   align-content: center;
 ;
     width: 100vw;
-    opacity: 30%;
+    height: 100%;
+    opacity: 70%;
 
 
 }
@@ -76,6 +77,14 @@ h1 {
     transform: rotate(200deg);
 }
 
+#blob1 {
+    position: absolute;
+    top:100px;
+    left: -70%;
+    width: 45vw;
+    opacity: 30%;
+    transform: rotate(20deg);
+}
 /* #piece {
   	opacity: 50%;
     position: fixed;
@@ -96,14 +105,22 @@ h2 {
 }
 
 img {
-  float: left;
+
   position: relative;
-  display: flex;
+
 }
 
 video{
   position: relative;
+padding: 7%;
+}
 
+video:hover{
+	filter: drop-shadow(2px 2px 8px #000000);
+
+  transition: .2s all;
+
+	filter:brightness(5px);
 }
 
 .img1 {
@@ -183,6 +200,12 @@ video{
   float: left;
   top: ;
   left: ;
+  transform: rotate(-2deg);
+}
+
+#a1 {
+  position: relative;
+  float: left;
   transform: rotate(-2deg);
 }
 
@@ -271,7 +294,7 @@ video{
 }
 
 .container {
-  margin: 5% 12% 50% 12%; /*top, right, bottom, left*/
+  margin: 5% 12% 20% 12%; /*top, right, bottom, left*/
   align-content: center;
   text-align: center;
   justify-content: center;
@@ -303,6 +326,12 @@ position: relative;
 opacity: 50%;
 }
 
+#until {
+top:0px;
+position: relative;
+opacity: 100%;
+}
+
 #star0 {
 position: inherit;
 left: 90%;
@@ -314,7 +343,7 @@ float: right;
 left:0%;
 position: relative;
 margin-top: -40%;
-top:0%;
+top:100px;
 }
 
 #anim1 {
@@ -386,7 +415,6 @@ footer{
   width: 100%;
   height: 5%;
   position: fixed;
-  left: 0;
   bottom: 0;
   text-align: right;
 }

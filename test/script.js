@@ -37,6 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#until',
+    actions: [{
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 50],
+    }, ],
+  });
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  LottieInteractivity.create({
     mode: 'cursor',
     player: '#star' ,
     actions: [
